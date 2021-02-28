@@ -47,7 +47,9 @@ public class CountryLanguageDao {
         Statement statement = null;
         Connection connection = null;
         String query = "select * from countryLanguage where CountryCode = '" 
-                        + countryLanguage.getCountryCode() + "'";
+                        + countryLanguage.getCountryCode() + "'"
+                        + "and Language = '" + countryLanguage.getLanguage()
+                        + "'";
         
          try {
             connection = MyConnection.connect();
@@ -68,4 +70,6 @@ public class CountryLanguageDao {
         }
         return getCountryLanguages;
     }
+
+
 }
