@@ -1,4 +1,3 @@
-
 package model;
 
 import java.sql.Connection;
@@ -8,22 +7,21 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class CountryLanguageDao {
-    
-    public List<CountryLanguage> selectCountryLanguage(){
-        
+
+    public List<CountryLanguage> selectCountryLanguage() {
+
         List<CountryLanguage> countryLanguageList = new ArrayList<>();
         ResultSet resultSet = null;
         Statement statement = null;
         Connection connection = null;
         String query = "select * from countryLanguage order by CountryCode";
-        
-         try {
+
+        try {
             connection = MyConnection.connect();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 CountryLanguage countryLanguage = new CountryLanguage();
                 countryLanguage.setCountryCode(resultSet.getString(1));
                 countryLanguage.setLanguage(resultSet.getString(2));
@@ -39,23 +37,23 @@ public class CountryLanguageDao {
         }
         return countryLanguageList;
     }
-    
-     public List<CountryLanguage> selectCountryLanguageByCC(CountryLanguage countryLanguage){
-        
+
+    public List<CountryLanguage> selectCountryLanguageByCC(CountryLanguage countryLanguage) {
+
         List<CountryLanguage> getCountryLanguages = new ArrayList<>();
         ResultSet resultSet = null;
         Statement statement = null;
         Connection connection = null;
-        String query = "select * from countryLanguage where CountryCode = '" 
-                        + countryLanguage.getCountryCode() + "'"
-                        + "and Language = '" + countryLanguage.getLanguage()
-                        + "'";
-        
-         try {
+        String query = "select * from countryLanguage where CountryCode = '"
+                + countryLanguage.getCountryCode() + "'"
+                + "and Language = '" + countryLanguage.getLanguage()
+                + "'";
+
+        try {
             connection = MyConnection.connect();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 countryLanguage.setCountryCode(resultSet.getString(1));
                 countryLanguage.setLanguage(resultSet.getString(2));
                 countryLanguage.setIsOfficial(resultSet.getString(3));
@@ -71,5 +69,37 @@ public class CountryLanguageDao {
         return getCountryLanguages;
     }
 
+    public boolean insertCountryLanguage(CountryLanguage countryLanguage) {
+
+        boolean insert = false;
+        Statement statement = null;
+        Connection connection = null;
+        String query = "insert into countryLanguage values ('" +
+                        countryLanguage.getCountryCode() + "','" +
+                        countryLanguage.getLanguage() + "','" +
+                        countryLanguage.getIsOfficial() + "'," + 
+                        countryLanguage.getPercentage()+ ")";
+        System.out.println(query);
+
+        try {
+
+            connection = MyConnection.connect();
+            statement = connection.createStatement();
+            statement.execute(query);
+            insert = true;
+            statement.close();
+            connection.close();
+
+        } catch (SQLException sqlE) {
+            System.out.println("Connection Error " + sqlE.getStackTrace());
+        }
+        return insert;
+    }
+    
+    public boolean deleteCountry(CountryLanguage countryLanguage){
+        boolean delete = false;
+        
+        return delete;
+    }
 
 }
