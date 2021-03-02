@@ -5,6 +5,8 @@
  */
 package view;
 
+import view.city.RegisterCity;
+
 /**
  *
  * @author carangui
@@ -27,61 +29,143 @@ public class MainWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
         pnlDesktop = new javax.swing.JDesktopPane();
+        jLabel2 = new javax.swing.JLabel();
         menuMainBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         boxExit = new javax.swing.JCheckBoxMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        opRegister = new javax.swing.JCheckBoxMenuItem();
-        Delete = new javax.swing.JCheckBoxMenuItem();
-        opDelete = new javax.swing.JCheckBoxMenuItem();
-        opList = new javax.swing.JCheckBoxMenuItem();
+        menuCities = new javax.swing.JMenu();
+        menuCityList = new javax.swing.JMenuItem();
+        menuCityCreate = new javax.swing.JMenuItem();
+        itemCityEdit = new javax.swing.JMenuItem();
+        itemCityDelete = new javax.swing.JMenuItem();
+        menuCountries = new javax.swing.JMenu();
+        menuCountryList = new javax.swing.JMenuItem();
+        menuCountryCreate = new javax.swing.JMenuItem();
+        menuCountryUpdate = new javax.swing.JMenuItem();
+        menuCountryDelete = new javax.swing.JMenuItem();
+        menuCountryLanguages = new javax.swing.JMenu();
+        menuCLanguageList = new javax.swing.JMenuItem();
+        menuCLanguageCreate = new javax.swing.JMenuItem();
+        menuCLanguageUpdate = new javax.swing.JMenuItem();
+        menuCLanguageDelete = new javax.swing.JMenuItem();
+        menuAcercaDe = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
+
+        jMenu3.setText("jMenu3");
+
+        jMenu4.setText("jMenu4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\carangui\\Documents\\NetBeansProjects\\MantenedorWorld\\src\\img\\country-database.png")); // NOI18N
+
+        pnlDesktop.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout pnlDesktopLayout = new javax.swing.GroupLayout(pnlDesktop);
         pnlDesktop.setLayout(pnlDesktopLayout);
         pnlDesktopLayout.setHorizontalGroup(
             pnlDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1057, Short.MAX_VALUE)
+            .addGroup(pnlDesktopLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         pnlDesktopLayout.setVerticalGroup(
             pnlDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 687, Short.MAX_VALUE)
+            .addGroup(pnlDesktopLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 917, Short.MAX_VALUE))
         );
 
         jMenu1.setText("File");
 
         boxExit.setSelected(true);
         boxExit.setText("Exit");
+        boxExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxExitActionPerformed(evt);
+            }
+        });
         jMenu1.add(boxExit);
 
         menuMainBar.add(jMenu1);
 
-        jMenu2.setText("City");
+        menuCities.setText("Cities");
 
-        opRegister.setSelected(true);
-        opRegister.setText("Register");
-        opRegister.addActionListener(new java.awt.event.ActionListener() {
+        menuCityList.setText("List");
+        menuCities.add(menuCityList);
+
+        menuCityCreate.setText("Create");
+        menuCityCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opRegisterActionPerformed(evt);
+                menuCityCreateActionPerformed(evt);
             }
         });
-        jMenu2.add(opRegister);
+        menuCities.add(menuCityCreate);
 
-        Delete.setSelected(true);
-        Delete.setText("Delete");
-        jMenu2.add(Delete);
+        itemCityEdit.setText("Edit");
+        itemCityEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemCityEditActionPerformed(evt);
+            }
+        });
+        menuCities.add(itemCityEdit);
 
-        opDelete.setSelected(true);
-        opDelete.setText("Update");
-        jMenu2.add(opDelete);
+        itemCityDelete.setText("Delete");
+        menuCities.add(itemCityDelete);
 
-        opList.setSelected(true);
-        opList.setText("List");
-        jMenu2.add(opList);
+        menuMainBar.add(menuCities);
 
-        menuMainBar.add(jMenu2);
+        menuCountries.setText("Countries");
+
+        menuCountryList.setText("List");
+        menuCountries.add(menuCountryList);
+
+        menuCountryCreate.setText("Create");
+        menuCountries.add(menuCountryCreate);
+
+        menuCountryUpdate.setText("Update");
+        menuCountries.add(menuCountryUpdate);
+
+        menuCountryDelete.setText("Delete");
+        menuCountries.add(menuCountryDelete);
+
+        menuMainBar.add(menuCountries);
+
+        menuCountryLanguages.setText("Country Languages");
+
+        menuCLanguageList.setText("List");
+        menuCountryLanguages.add(menuCLanguageList);
+
+        menuCLanguageCreate.setText("Create");
+        menuCLanguageCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCLanguageCreateActionPerformed(evt);
+            }
+        });
+        menuCountryLanguages.add(menuCLanguageCreate);
+
+        menuCLanguageUpdate.setText("Update");
+        menuCountryLanguages.add(menuCLanguageUpdate);
+
+        menuCLanguageDelete.setText("Delete");
+        menuCountryLanguages.add(menuCLanguageDelete);
+
+        menuMainBar.add(menuCountryLanguages);
+
+        menuAcercaDe.setText("Ayuda");
+
+        jMenuItem1.setText("Acerca De...");
+        menuAcercaDe.add(jMenuItem1);
+
+        menuMainBar.add(menuAcercaDe);
 
         setJMenuBar(menuMainBar);
 
@@ -89,19 +173,38 @@ public class MainWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlDesktop)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlDesktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlDesktop)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlDesktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void opRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opRegisterActionPerformed
+    private void boxExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxExitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_opRegisterActionPerformed
+    }//GEN-LAST:event_boxExitActionPerformed
+
+    private void itemCityEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCityEditActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemCityEditActionPerformed
+
+    private void menuCityCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCityCreateActionPerformed
+       RegisterCity registerCity = new RegisterCity();
+       registerCity.setVisible(rootPaneCheckingEnabled);
+    }//GEN-LAST:event_menuCityCreateActionPerformed
+
+    private void menuCLanguageCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCLanguageCreateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuCLanguageCreateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,14 +242,30 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBoxMenuItem Delete;
     private javax.swing.JCheckBoxMenuItem boxExit;
+    private javax.swing.JMenuItem itemCityDelete;
+    private javax.swing.JMenuItem itemCityEdit;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenu menuAcercaDe;
+    private javax.swing.JMenuItem menuCLanguageCreate;
+    private javax.swing.JMenuItem menuCLanguageDelete;
+    private javax.swing.JMenuItem menuCLanguageList;
+    private javax.swing.JMenuItem menuCLanguageUpdate;
+    private javax.swing.JMenu menuCities;
+    private javax.swing.JMenuItem menuCityCreate;
+    private javax.swing.JMenuItem menuCityList;
+    private javax.swing.JMenu menuCountries;
+    private javax.swing.JMenuItem menuCountryCreate;
+    private javax.swing.JMenuItem menuCountryDelete;
+    private javax.swing.JMenu menuCountryLanguages;
+    private javax.swing.JMenuItem menuCountryList;
+    private javax.swing.JMenuItem menuCountryUpdate;
     private javax.swing.JMenuBar menuMainBar;
-    private javax.swing.JCheckBoxMenuItem opDelete;
-    private javax.swing.JCheckBoxMenuItem opList;
-    private javax.swing.JCheckBoxMenuItem opRegister;
     private javax.swing.JDesktopPane pnlDesktop;
     // End of variables declaration//GEN-END:variables
 }
