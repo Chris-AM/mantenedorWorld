@@ -199,6 +199,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void menuCityCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCityCreateActionPerformed
        RegisterCity registerCity = new RegisterCity();
+       pnlDesktop.add(registerCity);
        registerCity.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_menuCityCreateActionPerformed
 
